@@ -35,8 +35,9 @@ public class OpenStepsClose {
 	/** main method */
 	public static void main(String[] args) {
 		SumoTraciConnection conn = new SumoTraciConnection(
-				"test/resources/sumo_maps/box1l/test.sumo.cfg",  // config file
-				12345                                  // random seed
+			//"test/resources/sumo_maps/box1l/test.sumo.cfg",  // config file
+			"map\\map.sumo.cfg",  // config file
+			12345                                  // random seed
 				);
 		try {
 			conn.runServer();
