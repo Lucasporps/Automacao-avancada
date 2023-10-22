@@ -17,30 +17,30 @@ public class MobilityCompany extends Thread {
     private ArrayList<Route> routes, executingRoutes, executedRoutes;
     
     public MobilityCompany() {
-        
+        this.ReadRoutes();
     }
 
-    /*public ReadRoutes(String _uriRoutesXML, String _idRoute) {
-		this.uriItineraryXML = _uriRoutesXML;
-		this.idItinerary = _idRoute;
+    public void ReadRoutes() {
+		String uriItineraryXML = "data/dados2.xml";
+		//String idItinerary = _idRoute;
 		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			Document doc = builder.parse(this.uriItineraryXML);
+			Document doc = builder.parse(uriItineraryXML);
 			NodeList nList = doc.getElementsByTagName("vehicle");
 			for (int i = 0; i < nList.getLength(); i++) {
 				Node nNode = nList.item(i);
 				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 					Element elem = (Element) nNode;
-					String idRouteAux = this.idItinerary;
+					String idRouteAux = Integer.toString(i);
 					Node node = elem.getElementsByTagName("route").item(0);
 					Element edges = (Element) node;
-					this.itinerary = new String[] { idRouteAux, edges.getAttribute("edges") };
+					String[] itinerary = new String[] { idRouteAux, edges.getAttribute("edges") };
+					routes.add(new Route(idRouteAux, itinerary));
 				}
 			}
 
 			Thread.sleep(100);
-			this.on = true;
 
 		} catch (SAXException e) {
 			e.printStackTrace();
@@ -51,5 +51,5 @@ public class MobilityCompany extends Thread {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-	}*/
+	}
 }
