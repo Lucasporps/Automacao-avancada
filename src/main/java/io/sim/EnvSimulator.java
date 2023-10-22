@@ -43,6 +43,7 @@ public class EnvSimulator extends Thread{
 				tS1.start();
                 Thread.sleep(5000);
 				a1.start();
+				a1.join();
 			}
 
 		

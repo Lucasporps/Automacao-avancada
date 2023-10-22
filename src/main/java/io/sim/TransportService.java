@@ -39,7 +39,7 @@ public class TransportService extends Thread {
 				Thread.sleep(this.auto.getAcquisitionRate());
 				if (this.getSumo().isClosed()) {
 					this.on_off = false;
-					System.out.println("SUMO is closed...");
+					System.out.println("SUMO is closed... in transportS");
 				}
 			}
 
@@ -81,7 +81,6 @@ public class TransportService extends Thread {
 					);
 			
 			sumo.do_job_set(Vehicle.setColor(this.auto.getIdAuto(), this.auto.getColorAuto()));
-			
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}

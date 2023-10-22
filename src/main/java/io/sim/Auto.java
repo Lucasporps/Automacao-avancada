@@ -168,7 +168,7 @@ public class Auto extends Thread {
 				System.out.println("************************");
 
 			} else {
-				System.out.println("SUMO is closed...");
+				System.out.println("SUMO is closed... in auto");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
